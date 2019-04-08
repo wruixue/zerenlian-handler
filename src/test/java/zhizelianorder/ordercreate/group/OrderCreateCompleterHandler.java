@@ -18,6 +18,9 @@ public class OrderCreateCompleterHandler implements IHandler<OrderCreateContext>
 
     @Override
     public HandlerContext<OrderCreateContext> handle(HandlerContext<OrderCreateContext> context) {
+        OrderCreateContext orderCreateContext = context.get();
+        System.out.println("OrderCreateCompleterHandler:订单创建完成  报错 可以让订单创建失败" + orderCreateContext.toString());
+
 
         return context;
     }

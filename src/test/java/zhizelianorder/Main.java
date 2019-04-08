@@ -1,12 +1,14 @@
 package zhizelianorder;
 
 import com.alibaba.fastjson.JSON;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import zhizelianorder.context.OrderConstants;
 import zhizelianorder.handler.HandlerContext;
 import zhizelianorder.handler.HandlerStart;
+import zhizelianorder.ordercreate.Group;
 import zhizelianorder.ordercreate.OrderCreateContext;
 import zhizelianorder.ordercreate.group.OrderCreateErrorHandler;
 
@@ -20,7 +22,8 @@ public class Main {
     @Autowired
     private OrderCreateErrorHandler orderCreateErrorHandler;
 
-    public static void main(String[] args) {
+    @Test
+    public void mainTest() {
         OrderCreateContext OrderCreateContext = new OrderCreateContext();
         OrderCreateContext.setUserId("userId");
 
@@ -29,11 +32,16 @@ public class Main {
         OrderCreateContext.setMchId("MerchId");
 
         //TODO: 2019/4/4 11:44 wrx 入口
-        // OrderCreateContext = this.save(OrderCreateContext, Group.DEFAULT);
+        OrderCreateContext = this.save(OrderCreateContext, Group.DEFAULT);
 
 
     }
 
+    /**
+     * 订单创建的成功事件
+     *
+     * @param context
+     */
     private void orderCreateSuccess(OrderCreateContext context) {
 
     }

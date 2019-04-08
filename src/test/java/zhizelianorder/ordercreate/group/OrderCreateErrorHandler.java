@@ -17,9 +17,28 @@ import zhizelianorder.ordercreate.OrderCreateContext;
 public class OrderCreateErrorHandler implements IHandler<OrderCreateContext> {
 
 
+    /**
+     * 出现异常而导致的订单取消
+     *
+     * @param context
+     */
     protected void cancelOrder(HandlerContext<OrderCreateContext> context) {
         //只有return 没有异常返回
         //使订单state-false
+
+
+        //例子
+//        ExpressOrderCreateContext expressOrderCreateContext = context.get();
+//        if(expressOrderCreateContext ==null || expressOrderCreateContext.getExpressOrderEntity() ==null){
+//            return;
+//        }
+//        ExpressOrderEntity orderEntity = expressOrderCreateContext.getExpressOrderEntity();
+//        if(orderEntity!=null){
+//            orderEntity.setState(Boolean.FALSE);
+//            orderEntity.setUpdatedAt(System.currentTimeMillis());
+//            expressOrderRepository.save(orderEntity);
+//        }
+
 
     }
 

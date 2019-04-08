@@ -22,11 +22,8 @@ public class OrderCreateMainHandler implements IHandler<OrderCreateContext> {
 
     @Override
     public HandlerContext<OrderCreateContext> handle(HandlerContext<OrderCreateContext> context) {
-        OrderCreateContext OrderCreateContext = context.get();
-
-
-
-
+        OrderCreateContext orderCreateContext = context.get();
+        System.out.println("OrderCreateMainHandler:创建订单主要信息" + orderCreateContext.toString());
 
         return context;
     }

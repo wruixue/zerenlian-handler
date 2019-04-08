@@ -20,7 +20,7 @@ public class OrderCreateAddrHandler implements IHandler<OrderCreateContext> {
     public HandlerContext<OrderCreateContext> handle(HandlerContext<OrderCreateContext> context) {
         //获取链条参数
         OrderCreateContext orderCreateContext = context.get();
-
+        System.out.println("OrderCreateAddrHandler:创建订单状态" + orderCreateContext.toString());
 
         return context;
     }
